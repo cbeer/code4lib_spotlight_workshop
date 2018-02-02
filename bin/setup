@@ -30,6 +30,9 @@ chdir APP_ROOT do
   puts "\n== Preparing database =="
   system! 'bin/rails db:setup'
 
+  puts "\n== Seed the database with an initial administrative account =="
+  system! 'bin/rake spotlight:initialize'
+
   puts "\n== Removing old logs and tempfiles =="
   system! 'bin/rails log:clear tmp:clear'
 
