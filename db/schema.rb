@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180202173804) do
+ActiveRecord::Schema.define(version: 20180214142120) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -261,6 +261,7 @@ ActiveRecord::Schema.define(version: 20180202173804) do
     t.integer "masthead_id"
     t.integer "thumbnail_id"
     t.string "default_index_view_type"
+    t.boolean "search_box", default: false
     t.index ["exhibit_id"], name: "index_spotlight_searches_on_exhibit_id"
     t.index ["slug", "scope"], name: "index_spotlight_searches_on_slug_and_scope", unique: true
   end
